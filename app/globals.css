@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 220 33% 98%;
+    --foreground: 260 25% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 260 25% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 260 25% 15%;
+    --primary: 260 73% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 260 20% 92%;
+    --secondary-foreground: 260 25% 15%;
+    --muted: 260 20% 92%;
+    --muted-foreground: 260 10% 45%;
+    --accent: 190 95% 45%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 350 89% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 260 15% 88%;
+    --input: 260 15% 88%;
+    --ring: 260 73% 50%;
+    --chart-1: 260 73% 50%;
+    --chart-2: 190 95% 45%;
+    --chart-3: 330 85% 65%;
+    --chart-4: 35 92% 65%;
+    --chart-5: 120 75% 55%;
+    --radius: 0.75rem;
+    --sidebar-background: 260 30% 20%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 190 95% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 260 25% 30%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 260 25% 30%;
+    --sidebar-ring: 190 95% 45%;
+  }
+  .dark {
+    --background: 260 25% 12%;
+    --foreground: 0 0% 95%;
+    --card: 260 25% 15%;
+    --card-foreground: 0 0% 95%;
+    --popover: 260 25% 15%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 190 95% 45%;
+    --primary-foreground: 260 25% 12%;
+    --secondary: 260 25% 25%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 260 25% 25%;
+    --muted-foreground: 260 10% 70%;
+    --accent: 260 73% 50%;
+    --accent-foreground: 0 0% 95%;
+    --destructive: 350 89% 45%;
+    --destructive-foreground: 0 0% 95%;
+    --border: 260 25% 25%;
+    --input: 260 25% 25%;
+    --ring: 190 95% 45%;
+    --chart-1: 190 95% 45%;
+    --chart-2: 260 73% 50%;
+    --chart-3: 330 85% 65%;
+    --chart-4: 35 92% 65%;
+    --chart-5: 120 75% 55%;
+    --sidebar-background: 260 30% 20%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 190 95% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 260 25% 30%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 260 25% 30%;
+    --sidebar-ring: 190 95% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom styles for a more unique look */
+.chat-pattern-bg {
+  background-color: hsl(var(--background));
+  background-image: radial-gradient(hsla(var(--primary) / 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.gradient-header {
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+  color: hsl(var(--primary-foreground));
+}
+
+.pdf-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.pdf-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, transparent 50%, hsla(var(--accent) / 0.2) 50%);
+  border-radius: 0 0 0 0.5rem;
+  z-index: 1;
+}
+
+.user-message {
+  border-radius: 1.5rem 1.5rem 0.25rem 1.5rem;
+  box-shadow: 0 2px 8px hsla(var(--primary) / 0.15);
+}
+
+.assistant-message {
+  border-radius: 1.5rem 1.5rem 1.5rem 0.25rem;
+  box-shadow: 0 2px 8px hsla(var(--accent) / 0.15);
+}
+
+.highlight-text {
+  background: linear-gradient(transparent 40%, hsla(var(--accent) / 0.3) 40%);
+  padding: 0 0.15rem;
+  border-radius: 0.25rem;
+}
